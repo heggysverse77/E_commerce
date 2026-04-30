@@ -1,12 +1,14 @@
 .new-product-section {
+
     padding: 80px 0;
     background-color: #F0EDE5; /* Brand off-white base */
     position: relative;
 }
 
 .cards-section {
+
     max-width: 1400px;
-    margin: 0 auto;
+    margin: 10px ;
     background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(10px);
     border-radius: 40px;
@@ -26,6 +28,7 @@
     position: relative;
     display: inline-block;
     padding-bottom: 30px;
+    padding-left: 20px;
 }
 
 .new-product-section h1::after {
@@ -37,6 +40,7 @@
     height: 4px;
     background-color: #5ab176;
     border-radius: 2px;
+    margin-left: 20px;
 }
 
 /* Customizing Swiper in Home */

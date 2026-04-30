@@ -13,11 +13,11 @@ import './home.css';
 import { Pagination } from 'swiper/modules';
 import { FaE } from 'react-icons/fa6';
 
-const Home = () => {
+const Home = ({ cart, setCart, likes, setLikes }) => {
      const categories=["laptops","smartphones","mobile-accessories","tablets"]
     const [products, setProducts] = useState([]);
 useEffect(() => {
-  const fetchData = async () => {
+  const fetchData = async () => { 
     try {
       const results = await Promise.all(
         categories.map(async (cat) => {
@@ -78,6 +78,11 @@ useEffect(() => {
                 price={product.price}
                 img={product.thumbnail}
                 id={product.id}
+                product={product}
+                cart={cart}
+                setCart={setCart}
+                likes={likes}
+                setLikes={setLikes}
             />
             </SwiperSlide>
            </>

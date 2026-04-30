@@ -2,8 +2,9 @@ import React from 'react';
 import './nav.css';
 import { useState,useEffect } from 'react';
 import { BiCategory } from "react-icons/bi";
-
-
+import { FaCartShopping } from "react-icons/fa6";
+import { IoHeartOutline } from "react-icons/io5";
+import { Link } from 'react-router-dom';
 const Navbar = () => {
     
     const [isClicked,setIsClicked] = useState(false);
@@ -19,7 +20,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        <div className="logo">E-Shop</div>
+        <div className="logo"><Link to="/">E-Shop</Link></div>
       </div>
 
       <div className="navbar-middle">
@@ -41,11 +42,12 @@ const Navbar = () => {
         </div>
       </div>
       <div className="navbar-right">
-        <ul className="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#shop">Shop</a></li>
+        <ul className="nav-links" style={{alignItems: 'center'}}>
+          <li><a href="/">Home</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><Link to="/likes" className="like-icon"><IoHeartOutline size={24} style={{display: 'flex'}} /></Link></li>
+          <li><Link to="/cart" className="cart-icon"><FaCartShopping size={22} style={{display: 'flex'}} /></Link></li>
         </ul>
       </div>
     </nav>
