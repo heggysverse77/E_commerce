@@ -13,38 +13,7 @@ import './home.css';
 import { Pagination } from 'swiper/modules';
 import { FaE } from 'react-icons/fa6';
 
-const Home = ({ cart, setCart, likes, setLikes }) => {
-     const categories=["laptops","smartphones","mobile-accessories","tablets"]
-    const [products, setProducts] = useState([]);
-useEffect(() => {
-  const fetchData = async () => { 
-    try {
-      const results = await Promise.all(
-        categories.map(async (cat) => {
-          const res = await fetch(`https://dummyjson.com/products/category/${cat}`);
-          const data = await res.json();
-
-      
-
-          return {cat,products: data.products} 
-        })
-      );
-
-      console.log("RESULTS:", results);
-
-      const allcategrical_prod = results
-
-      setProducts(allcategrical_prod);
-
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
-  fetchData();
-}, []);
-
-
+const Home = ({ cart, setCart, likes, setLikes, products }) => {
 
   return (
     <>
